@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buffer;
 
 /**
- *
  * @author rafael
  */
 public class Buffer {
@@ -20,7 +14,14 @@ public class Buffer {
     private int atual = 0;
     private int primeiro;
     private int ultimo;
-    private char dados[] = {' ','i','n','t','9','8','3','7','1','2',' '};
+    private char dados[];
+    
+    public Buffer(char[] dados) {
+        this.atual = 0;
+        this.primeiro = 0;
+        this.ultimo = 0;
+        this.dados = dados;
+    }
     
     public char proximo()
     {
@@ -45,7 +46,7 @@ public class Buffer {
     public char[] lexema()
     {
         int aux = ultimo-primeiro+1;
-        int p=primeiro,u=ultimo;
+        int p=primeiro;
         char [] temp = new char [aux];
         for (int i = 0; i < aux; i++)
         {
@@ -53,5 +54,29 @@ public class Buffer {
             p++;
         }
         return temp;
+    }
+    
+    public int getPrimeiro() {
+        return primeiro;
+    }
+
+    public void setPrimeiro(int primeiro) {
+        this.primeiro = primeiro;
+    }
+
+    public int getUltimo() {
+        return ultimo;
+    }
+
+    public void setUltimo(int ultimo) {
+        this.ultimo = ultimo;
+    }
+
+    public int getAtual() {
+        return atual;
+    }
+
+    public void setAtual(int atual) {
+        this.atual = atual;
     }
 }
